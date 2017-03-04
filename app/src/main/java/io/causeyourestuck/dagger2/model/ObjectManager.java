@@ -4,14 +4,18 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 /**
  * Created by Omar on 18/02/2017.
  */
-
+@Singleton
 public class ObjectManager {
     private SharedPreferences sharedPreferences;
     private Gson gson;
 
+    @Inject
     public ObjectManager(SharedPreferences sharedPreferences, Gson gson) {
         this.sharedPreferences = sharedPreferences;
         this.gson = gson;
