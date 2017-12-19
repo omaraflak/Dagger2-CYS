@@ -21,7 +21,7 @@ public class ObjectManager {
         this.gson = gson;
     }
 
-    public void save(Object o, String key){
+    public void save(String key, Object o){
         sharedPreferences.edit()
                 .putString(key, gson.toJson(o))
                 .apply();
