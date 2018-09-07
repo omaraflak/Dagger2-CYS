@@ -12,6 +12,7 @@ import io.causeyourestuck.dagger2.module.AppModule;
 
 public class MyApp extends Application {
     private static MyApp app;
+    private AppModule appModule;
     private BasicComponent basicComponent;
 
     @Override
@@ -19,13 +20,18 @@ public class MyApp extends Application {
         super.onCreate();
         app = this;
 
+        appModule = new AppModule(this);
         basicComponent = DaggerBasicComponent.builder()
-                .appModule(new AppModule(getApplicationContext()))
+                .appModule(appModule)
                 .build();
     }
 
     public static MyApp app() {
         return app;
+    }
+
+    public AppModule appModule() {
+        return appModule;
     }
 
     public BasicComponent basicComponent() {

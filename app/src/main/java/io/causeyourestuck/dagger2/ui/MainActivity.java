@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 
         String link = objectManager.get("link", String.class);
         if(link==null){
-            link = "http://s2.quickmeme.com/img/a6/a69d84379a04cc6f56a58c1c9b8d0826ddd24c9e52644ac7a068705a7be1a6bb.jpg";
+            link = "https://image.ibb.co/gfmwVK/image.jpg";
             objectManager.save("link", link);
         }
 

@@ -10,6 +10,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import io.causeyourestuck.dagger2.model.ObjectManager;
 
 /**
  * Created by Omar on 18/02/2017.
@@ -35,5 +36,10 @@ public class AppModule {
     @Singleton @Provides
     public Gson provideGson(){
         return new Gson();
+    }
+
+    @Singleton @Provides
+    public ObjectManager provideObjectManager(SharedPreferences sharedPreferences, Gson gson){
+        return new ObjectManager(sharedPreferences, gson);
     }
 }
